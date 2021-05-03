@@ -177,7 +177,7 @@ router.put('/unlike/:id',auth,async(req,res)=>{
 
 
 
-// route   Post api/posts/cpmment/:id
+// route   Post api/posts/comment/:id
 // desc    comment on a post 
 //access   private
 
@@ -217,7 +217,7 @@ router.post('/comment/:id',[auth,[
 
 
 // route   Delete api/posts/comment/:id/:comment_id
-// desc    comment on a post error
+// desc    Delete comment
 //access   private
 
 router.delete('/comment/:id/:comment_id',auth,async(req,res)=>{
@@ -234,9 +234,8 @@ router.delete('/comment/:id/:comment_id',auth,async(req,res)=>{
         if(comment.user.toString()!==req.params.id){
             return res.status(401).json({msg:"User not authorized"})
         }
-        console.log(comments,"hii")
-
-        const removeIndex = post.comment.map(comment=> comment.user.toString()).indexOf(req.user.id);
+ 
+        const removeIndex = post.comments.map(comment=> comment.user.toString()).indexOf(req.user.id);
         post.comments.splice(removeIndex,1);
 
 
@@ -244,7 +243,6 @@ router.delete('/comment/:id/:comment_id',auth,async(req,res)=>{
         res.json(post.comments)
 
     } catch (e) {
-        console.log("hii")
         console.error(e.message); 
         res.status(500).json('Server error')
     }
