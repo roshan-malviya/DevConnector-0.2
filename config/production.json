@@ -1,0 +1,6 @@
+{
+    "mongoURI": "mongodb+srv://roshanDb:swOAIwpldXIZUY72@devconnector.qjmsp.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",
+    "jwtSecret":"mysecrettoken",
+    "GithubClientId":"5cbfcb1ba87149eeaa92",
+    "GithubSecret":"441d226ad1624b1af821039f50c71c62ac36da0a"
+}
