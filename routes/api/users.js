@@ -4,7 +4,6 @@
 
 // acces    Public
 
-const normalize = require('normalize-url');
 const express =require('express');
 const router=express.Router();
 
