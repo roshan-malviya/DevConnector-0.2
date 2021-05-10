@@ -9,6 +9,7 @@ export const getCurrentProfile = () => async dispatch => {
         dispatch({
             type: GET_PROFILE,
             payload : res.data
+
         });
 
         
@@ -24,9 +25,12 @@ export const getCurrentProfile = () => async dispatch => {
 //Get all profiles
 
 export const getProfiles = () => async dispatch => {
+
+    dispatch({type:CLEAR_PROFILE})
+    
     try {
-        dispatch({type:CLEAR_PROFILE})
         const res = await axios.get('/api/profile/')
+        console.log(res.data)
         dispatch({
             type: GET_PROFILES,
             payload : res.data
@@ -82,7 +86,8 @@ export const getGithubRepos = username => async dispatch => {
 
 }
 
-export const createProfile = (formData,history,edit=false)=>async (dispatch)=>{
+//create or update profile
+export const createProfile = (formData,history,edit=false)=>async dispatch =>{
     try {
         const config={
             headers:{

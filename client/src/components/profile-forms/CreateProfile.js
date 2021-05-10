@@ -31,7 +31,7 @@ const CreateProfile = ({createProfile,history}) => {
         facebook,
         linkedin,
         youtube,
-        instagram } = setFormData;
+        instagram } = formData;
         
         const onChange = e => setFormData({...formData,[e.target.name]:e.target.value})
         const onSubmit = e => {
@@ -67,7 +67,7 @@ const CreateProfile = ({createProfile,history}) => {
           >
         </div>
         <div className="form-group">
-          <input type="text" placeholder="Company" name="company" value={company} onChange={e=>onChange(e)} />
+          <input type="text" placeholder="Company" name="Company" value={company} onChange={e=>onChange(e)} />
           <small className="form-text"
             >Could be your own company or one you work for</small
           >
@@ -152,5 +152,6 @@ CreateProfile.propTypes = {
     createProfile : PropTypes.func.isRequired
 
 }
+
 
 export default connect(null,{createProfile})(withRouter(CreateProfile))

@@ -59,7 +59,7 @@ export const removeLike = id =>async dispatch =>{
 //Delete post   
 export const deletePost = id =>async dispatch =>{
     try {
-        const res= await axios.delete(`/api/post/${id}`);
+        await axios.delete(`/api/post/${id}`);
         dispatch({
             type:DELETE_POST,
             payload:id
@@ -145,7 +145,7 @@ export const addComment = (postId,formData) =>async dispatch =>{
 // delete comment
 export const deleteComment = (postId,commentId) =>async dispatch =>{
     try {
-        const res= await axios.delete(`/api/post/comment/${postId}/${commentId}`);
+        await axios.delete(`/api/post/comment/${postId}/${commentId}`);
         dispatch({
             type:REMOVE_COMMENT,
             payload:commentId
