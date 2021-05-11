@@ -14,9 +14,10 @@ export default function(state=initialState,action){
         case USER_LOADED:
             return{
                 ...state,
+                user : payload,
                 isAuthenticated : true,
                 loading: false,
-                user : payload
+                
             }
         case REGISTER_SUCCESS:
         case LOGIN_SUCCESS:
