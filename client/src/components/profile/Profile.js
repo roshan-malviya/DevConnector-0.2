@@ -18,7 +18,7 @@ const Profile = ({
 }) => {
   useEffect(() => {
       getProfileById(match.params.id)
-  }, [getProfileById, match.params.id])
+  }, [])
   return <Fragment>
       {profile === null || loading ? <Spinner /> : <Fragment>
           <Link to='/profiles' className="btn btn-light">
@@ -68,8 +68,9 @@ Profile.propTypes = {
 }
 
 const mapStateToProps = state => ({
-  auth: state.auth,
-  profile: state.profile
+
+  profile: state.profile,
+  auth: state.auth
   
 })
 
