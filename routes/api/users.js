@@ -6,6 +6,7 @@
 
 const express =require('express');
 const router=express.Router();
+const normalize = require('normalize-url');
 
 const {check,validationResult}= require("express-validator")
 
