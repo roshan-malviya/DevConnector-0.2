@@ -13,6 +13,9 @@ const cors = require('cors')
 const app = express();
 
 connectDB()
+app.get("/",(req,res)=>{
+    res.send("API is working")
+})
 app.use(cors())
 
 // Init Middeleware
@@ -21,6 +24,7 @@ app.use(express.json({extended : false}))
 
 
 // //define routes 
+
 
 app.use('/api/users',require('./routes/api/users'))
 app.use('/api/auth',require('./routes/api/auth'))
