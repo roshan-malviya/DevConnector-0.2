@@ -6,7 +6,6 @@
 
 const express =require('express');
 const router=express.Router();
-const normalize = require('normalize-url');
 
 const {check,validationResult}= require("express-validator")
 
@@ -38,14 +37,11 @@ async(req,res)=>{
         }
         //get users gravatar 
 
-      const avatar = normalize(
-        gravatar.url(email, {
+      const avatar = gravatar.url(email, {
           s: '200',
           r: 'pg',
           d: 'mm'
-        }),
-        { forceHttps: true }
-      );
+        });
 
       user = new User({
         name,
