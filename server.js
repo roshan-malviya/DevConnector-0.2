@@ -13,16 +13,16 @@ const cors = require('cors')
 const app = express();
 
 connectDB()
-app.get("/",(req,res)=>{
-    res.send("API is working")
-})
+
 app.use(cors())
 
 // Init Middeleware
 
 app.use(express.json({extended : false}))
 
-
+app.get("/",(req,res)=>{
+    res.send("API is working")
+})
 // //define routes 
 
 
