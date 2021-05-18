@@ -35,7 +35,7 @@ app.use('/api/post',require('./routes/api/post'))
 
 if (process.env.NODE_ENV==='production'){
     // set a static folder
-    app.use(express.static('client/build'))
+    // app.use(express.static('client/build'))
     app.get('*',(res,req)=>{
         res.sendFile(path.resolve(__dirname,'client','build','index.html'))
     })
